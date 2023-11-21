@@ -17,10 +17,11 @@ variable "variables" {
   default     = {}
   description = "Variables to create in the variable set"
   type = map(object({
-    value     = string
-    category  = optional(string, "terraform")
-    hcl       = optional(bool, false)
-    sensitive = optional(bool, false)
+    value       = string
+    category    = optional(string, "terraform")
+    description = optional(string, "")
+    hcl         = optional(bool, false)
+    sensitive   = optional(bool, false)
   }))
 
   validation {
