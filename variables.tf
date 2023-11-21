@@ -25,17 +25,17 @@ variable "variables" {
     sensitive   = optional(bool, false)
   }))
 
-  validation {
-    condition = alltrue([
-      for k, v in var.variables : can(contains(["env", "terraform"], v.category))
-    ])
-    error_message = "values must be in [\"env\", \"terraform\"]"
-  }
+  # validation {
+  #   condition = alltrue([
+  #     for k, v in var.variables : can(contains(["env", "terraform"], v.category))
+  #   ])
+  #   error_message = "values must be in [\"env\", \"terraform\"]"
+  # }
 
-  validation {
-    condition = alltrue([
-      for k, v in var.variables : can(!v.hcl) if v.category == "env"
-    ])
-    error_message = "hcl cannot be true if category is env"
-  }
+  # validation {
+  #   condition = alltrue([
+  #     for k, v in var.variables : can(!v.hcl) if v.category == "env"
+  #   ])
+  #   error_message = "hcl cannot be true if category is env"
+  # }
 }
