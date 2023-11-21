@@ -18,7 +18,7 @@ variable "variables" {
   description = "Variables to create in the variable set"
   type = map(object({
     value     = string
-    category  = string
+    category  = optional(string, "terraform")
     hcl       = optional(bool, false)
     sensitive = optional(bool, false)
   }))
