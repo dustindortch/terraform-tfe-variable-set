@@ -33,7 +33,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_description"></a> [description](#input\_description) | Variable set description | `string` | n/a | yes |
+| <a name="input_description"></a> [description](#input\_description) | Variable set description | `string` | `""` | no |
 | <a name="input_name"></a> [name](#input\_name) | Variable set name | `string` | n/a | yes |
 | <a name="input_organization"></a> [organization](#input\_organization) | Organization name for variable set | `string` | n/a | yes |
 | <a name="input_variables"></a> [variables](#input\_variables) | Variables to create in the variable set | <pre>map(object({<br>    value       = string<br>    category    = optional(string, "terraform")<br>    description = optional(string, "")<br>    hcl         = optional(bool, false)<br>    sensitive   = optional(bool, false)<br>  }))</pre> | `{}` | no |

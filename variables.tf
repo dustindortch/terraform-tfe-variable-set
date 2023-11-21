@@ -4,6 +4,7 @@ variable "name" {
 }
 
 variable "description" {
+  default     = ""
   description = "Variable set description"
   type        = string
 }
