@@ -9,9 +9,21 @@ variable "description" {
   type        = string
 }
 
+variable "global" {
+  default     = false
+  description = "(Default: false) Enable as global variable set"
+  type        = bool
+}
+
 variable "organization" {
   description = "Organization name for variable set"
   type        = string
+}
+
+variable "priority" {
+  default     = false
+  description = "(Default: false) Enable as priority variable set"
+  type        = bool
 }
 
 variable "variables" {
@@ -38,4 +50,16 @@ variable "variables" {
   #   ])
   #   error_message = "hcl cannot be true if category is env"
   # }
+}
+
+variable "project_ids" {
+  default     = []
+  description = "Project ID to associate with the variable set"
+  type        = list(string)
+}
+
+variable "workspace_ids" {
+  default     = []
+  description = "Workspace ID to associate with the variable set"
+  type        = list(string)
 }
